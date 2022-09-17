@@ -9,12 +9,17 @@
     "dev:api": "nx serve api"
   },
   "private": true,
+  "prisma": {
+    "schema": "libs/api/data-access-db/src/lib/schema.prisma"
+  },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.1",
     "@nestjs/mercurius": "^10.1.0",
+    "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-fastify": "^9.0.11",
+    "@prisma/client": "^4.3.1",
     "graphql": "^16.6.0",
     "mercurius": "^11.0.0",
     "reflect-metadata": "^0.1.13",
@@ -42,6 +47,8 @@
     "jest-environment-jsdom": "28.1.1",
     "nx": "14.7.5",
     "prettier": "^2.6.2",
+    "prisma": "^4.3.1",
+    "prisma-nestjs-graphql": "^17.0.1",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
     "typescript": "~4.8.2"
