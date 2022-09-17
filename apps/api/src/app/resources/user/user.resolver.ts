@@ -15,14 +15,14 @@ export class UserResolver {
     return this.userService.create(userCreateArguments)
   }
 
-  @Query(() => [User], { name: 'user' })
-  findAll() {
-    return this.userService.findAll();
+  @Query(() => User)
+  user(@Args() findUserArgs: FindUniqueUserArgs) {
+    return this.userService.findOne(findUserArgs);
   }
 
-  @Query(() => User, { name: 'user' })
-  findOne(@Args() findUserArgs: FindUniqueUserArgs) {
-    return this.userService.findOne(findUserArgs);
+  @Query(() => [User])
+  users() {
+    return this.userService.findAll();
   }
 
   @Mutation(() => User)
