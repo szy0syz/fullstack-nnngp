@@ -34,3 +34,5 @@ yarn nx g @nrwl/nest:lib api/generated/db-types --buildable --tags "scope:api"
 
 yarn add class-transformer class-validator
 ```
+
+![image](https://user-images.githubusercontent.com/10555820/190855810-92228730-d81b-442c-b1b0-d606455963c9.png)
