@@ -10,11 +10,6 @@ import { CreateOneUserArgs,
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
-  @Mutation(() => User)
-  createUser(@Args() userCreateArguments: CreateOneUserArgs) {
-    return this.userService.create(userCreateArguments)
-  }
-
   @Query(() => User)
   user(@Args() findUserArgs: FindUniqueUserArgs) {
     return this.userService.findOne(findUserArgs);
@@ -23,6 +18,11 @@ export class UserResolver {
   @Query(() => [User])
   users() {
     return this.userService.findAll();
+  }
+
+  @Mutation(() => User)
+  createUser(@Args() userCreateArgs: CreateOneUserArgs) {
+    return this.userService.create(userCreateArgs);
   }
 
   @Mutation(() => User)

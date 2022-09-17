@@ -3,7 +3,7 @@
  * This is only a minimal backend to get started.
  */
 
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 
@@ -12,8 +12,29 @@ import { AppModule } from './app/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, new FastifyAdapter());
   const globalPrefix = 'graphql';
-
   const port = process.env.PORT || 3333;
+
+  // app.useGlobalPipes(
+  //   new ValidationPipe({
+  //     transform: true,
+  //     exceptionFactory: (errors: ValidationError[]) => {
+  //       const errorsMessages = errors.map(error => {
+  //         Object.values(error.constraints)
+  //       })
+  //       return new BadRequestException(errorsMessages.toString())
+  //     },
+  //     forbidUnknownValues: false
+  //   })
+  // )
+
+  app.useGlobalPipes(
+    new ValidationPipe({
+      skipMissingProperties: true,
+      //whitelist: true,
+      transform: true,
+      transformOptions: { enableImplicitConversion: true }
+    })
+  )
 
   await app.listen(port);
 
