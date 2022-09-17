@@ -21,6 +21,10 @@ yarn nx g @nrwl/nest:lib api/data-access-db --buildable --tags "scope:api"
 
 yarn add prisma prisma-nestjs-graphql -D
 yarn add @prisma/client
+
+yarn add -D env-cmd
+
+yarn db:up
 ```
 
 <img width="1717" alt="image" src="https://user-images.githubusercontent.com/10555820/190848052-ac046478-4381-4512-acaf-2344f86c48e0.png">

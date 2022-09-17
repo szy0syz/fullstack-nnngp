@@ -1,12 +1,17 @@
 {
-  "name": "fullstack1",
+  "name": "fullstack",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "dev:api": "nx serve api"
+    "dev:api": "nx serve api",
+    "DATABASE": "-----------------------------------------------------------------------------------------------",
+    "db:up": "npm run db:docker && npm run db:dev-migrate && npm run db:create-client -- --watch",
+    "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
+    "db:create-client": "prisma generate",
+    "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev"
   },
   "private": true,
   "prisma": {
@@ -40,6 +45,7 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "env-cmd": "^10.1.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "fastify": "^3.25.0 || ^4.0.0",
