@@ -1,16 +1,18 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import { UserService } from './user.service';
-import { User } from './entities/user.entity';
-import { CreateUserInput } from './dto/create-user.input';
-import { UpdateUserInput } from './dto/update-user.input';
+import { CreateOneUserArgs,
+  FindUniqueUserArgs,
+  UpdateOneUserArgs,
+  User
+} from "@fullstack1/api/generated/db-types";
 
 @Resolver(() => User)
 export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
   @Mutation(() => User)
-  createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
-    return this.userService.create(createUserInput);
+  createUser(@Args() userCreateArguments: CreateOneUserArgs) {
+    return this.userService.create(userCreateArguments)
   }
 
   @Query(() => [User], { name: 'user' })
@@ -19,17 +21,17 @@ export class UserResolver {
   }
 
   @Query(() => User, { name: 'user' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
-    return this.userService.findOne(id);
+  findOne(@Args() findUserArgs: FindUniqueUserArgs) {
+    return this.userService.findOne(findUserArgs);
   }
 
   @Mutation(() => User)
-  updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
-    return this.userService.update(updateUserInput.id, updateUserInput);
+  updateUser(@Args() userUpdateInput: UpdateOneUserArgs) {
+    return this.userService.update(userUpdateInput);
   }
 
   @Mutation(() => User)
-  removeUser(@Args('id', { type: () => Int }) id: number) {
-    return this.userService.remove(id);
+  removeUser(@Args() removeUserArgs: FindUniqueUserArgs) {
+    return this.userService.remove(removeUserArgs);
   }
 }
