@@ -37,3 +37,4 @@ yarn add class-transformer class-validator
 
 <img width="1153" alt="image" src="https://user-images.githubusercontent.com/10555820/190855832-998c43c0-9028-41c0-b457-5bd7a1bf9e1b.png">
 
+> 终于解决我之前的疑问，为什么 `Prisma` 牺牲了强类型和便捷性，缺失了 `OO` 的部分，还别说真可以弥补了。
