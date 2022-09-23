@@ -9,7 +9,7 @@
 ```bash
 npx create-nx-workspace . -preset=nest --tags "scope:api"
 yarn create create-nx-workspace . -preset=nest --tags "scope:api" --package-manager=yarn
-pnpx create-nx-workspace fullstack1 -preset=nest --tags "scope:api"
+pnpx create-nx-workspace fullstack -preset=nest --tags "scope:api"
 
 pnpm i @nestjs/platform-fastify @nestjs/graphql @nestjs/mercurius graphql mercurius
 yarn add @nestjs/platform-fastify @nestjs/graphql @nestjs/mercurius graphql mercurius

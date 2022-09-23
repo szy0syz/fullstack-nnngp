@@ -15,13 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fullstack1/api/data-access-db": [
+      "@fullstack/api/data-access-db": [
         "libs/api/data-access-db/src/index.ts"
       ],
-      "@fullstack1/api/generated/db-types": [
+      "@fullstack/api/generated/db-types": [
         "libs/api/generated/db-types/src/index.ts"
       ],
-      "@fullstack1/client/generated/graphql-types": [
+      "@fullstack/client/generated/graphql-types": [
         "libs/client/generated/graphql-types/src/index.ts"
       ]
     }

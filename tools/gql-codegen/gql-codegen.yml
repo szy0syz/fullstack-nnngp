@@ -12,7 +12,7 @@ generates:
     preset: near-operation-file
     presetConfig:
       extension: .gen.ts
-      baseTypesPath: '~@fullstack1/client/generated/graphql-types'
+      baseTypesPath: '~@fullstack/client/generated/graphql-types'
     plugins:
       - typescript-operations
       - typescript-urql

@@ -5,7 +5,7 @@ import {
   FindUniqueUserArgs,
   UpdateOneUserArgs,
   User,
-} from '@fullstack1/api/generated/db-types';
+} from '@fullstack/api/generated/db-types';
 
 @Resolver(() => User)
 export class UserResolver {

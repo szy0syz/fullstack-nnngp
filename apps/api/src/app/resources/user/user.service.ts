@@ -1,10 +1,10 @@
-import { DbService } from '@fullstack1/api/data-access-db';
+import { DbService } from '@fullstack/api/data-access-db';
 import { Injectable } from '@nestjs/common';
 import {
   CreateOneUserArgs,
   FindUniqueUserArgs,
   UpdateOneUserArgs
-} from '@fullstack1/api/generated/db-types'
+} from '@fullstack/api/generated/db-types'
 
 @Injectable()
 export class UserService {

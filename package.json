@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:dev": "env-cmd -f .local.env concurrently --kill-others \"yarn:db:up\" \"yarn:dev:api\" \"yarn:dev:web\"",
+    "start:dev": "env-cmd -f .local.env concurrently --kill-others \"yarn:db:up\" \"yarn:dev:api\" \"yarn:dev:web\" \"yarn:gen:gql\"",
     "dev:api": "yarn nx serve api",
     "dev:web": "yarn nx serve web",
     "DATABASE": "-----------------------------------------------------------------------------------------------",
@@ -12,7 +12,7 @@
     "db:create-client": "prisma generate",
     "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev",
     "UTILS": "---------------------------------------------------------------------------------------------------",
-    "gen:gql": "graphql-codegen --config tools/gql-codegen/gql-codegen.yml --watch"
+    "gen:gql": "graphql-code-generator --config tools/gql-codegen/gql-codegen.yml --watch"
   },
   "private": true,
   "prisma": {
