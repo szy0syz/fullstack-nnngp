@@ -10,7 +10,9 @@
     "db:up": "yarn db:docker && yarn db:dev-migrate && yarn db:create-client -- --watch",
     "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
     "db:create-client": "prisma generate",
-    "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev"
+    "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev",
+    "UTILS": "---------------------------------------------------------------------------------------------------",
+    "gen:gql": "graphql-codegen --config tools/gql-codegen/gql-codegen.yml --watch"
   },
   "private": true,
   "prisma": {
@@ -35,9 +37,16 @@
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "urql": "^3.0.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.12.1",
+    "@graphql-codegen/near-operation-file-preset": "^2.4.1",
+    "@graphql-codegen/typed-document-node": "^2.3.3",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-urql": "^3.7.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@nrwl/cli": "14.7.5",
@@ -71,6 +80,7 @@
     "eslint-plugin-react": "7.31.8",
     "eslint-plugin-react-hooks": "4.6.0",
     "fastify": "^3.25.0 || ^4.0.0",
+    "graphql-codegen": "^0.4.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "14.7.5",

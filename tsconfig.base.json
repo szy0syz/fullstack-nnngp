@@ -20,6 +20,9 @@
       ],
       "@fullstack1/api/generated/db-types": [
         "libs/api/generated/db-types/src/index.ts"
+      ],
+      "@fullstack1/client/generated/graphql-types": [
+        "libs/client/generated/graphql-types/src/index.ts"
       ]
     }
   },

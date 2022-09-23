@@ -43,4 +43,8 @@ yarn add class-transformer class-validator
 yarn add -D @nrwl/next
 
 yarn nx g @nrwl/next:app web
+
+yarn add -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation-file-preset @graphql-codegen/typed-document-node @graphql-codegen/typescript-operations @graphql-codegen/typescript @graphql-codegen/typescript-urql
+
+yarn nx g @nrwl/node:lib client/generated/graphql-types --tags "scope:client"
 ```
