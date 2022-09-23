@@ -48,3 +48,5 @@ yarn add -D graphql-codegen @graphql-codegen/cli @graphql-codegen/near-operation
 
 yarn nx g @nrwl/node:lib client/generated/graphql-types --tags "scope:client"
 ```
+
+https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-9853-b542060f7f3d.mp4
