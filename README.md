@@ -61,3 +61,32 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
 
 <img width="1044" alt="image" src="https://user-images.githubusercontent.com/10555820/192578662-e3bda7e0-4206-4288-9cc5-ea424739b7bd.png">
 
+### 配置ESLint
+
+> 严禁到处前后端不分的调用，调错依赖直接显示。
+
+```json
+{
+  "@nrwl/nx/enforce-module-boundaries": [
+    "error",
+    {
+      "allow": [],
+      // update depConstraints based on your tags
+      "depConstraints": [
+        {
+          "sourceTag": "scope:shared",
+          "onlyDependOnLibsWithTags": ["scope:shared"]
+        },
+        {
+          "sourceTag": "scope:api",
+          "onlyDependOnLibsWithTags": ["scope:shared", "scope:api"]
+        },
+        {
+          "sourceTag": "scope:client",
+          "onlyDependOnLibsWithTags": ["scope:shared", "scope:client"]
+        }
+      ]
+    }
+  ]
+}
+```

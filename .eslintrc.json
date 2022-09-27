@@ -1,20 +1,34 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": ["@nrwl/nx", "unicorn", "prettier"],
   "overrides": [
     {
+      "extends": ["plugin:unicorn/recommended", "plugin:prettier/recommended"],
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "prettier/prettier": ["error"],
+        "unicorn/prevent-abbreviations": "warn",
+        "unicorn/no-null": "off",
+        "unicorn/prefer-module": ["warn"],
+        "unicorn/no-abusive-eslint-disable": ["warn"],
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
           {
-            "enforceBuildableLibDependency": true,
             "allow": [],
+            // update depConstraints based on your tags
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
+              },
+              {
+                "sourceTag": "scope:api",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:api"]
+              },
+              {
+                "sourceTag": "scope:client",
+                "onlyDependOnLibsWithTags": ["scope:shared", "scope:client"]
               }
             ]
           }
@@ -29,13 +43,6 @@
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      },
       "rules": {}
     }
   ]

@@ -3,14 +3,7 @@ import { useGetUserQuery } from '../api/user/user.gql.gen';
 import styles from './index.module.css';
 
 export function Index() {
-  const [data] = useGetUserQuery({
-    variables: {
-      args: {
-        id: 1
-      }
-    }
-  })
-
+  const [data] = useGetUserQuery({ variables: { args: { id: 1 } } });
   console.log(data);
 
 
