@@ -27,6 +27,10 @@ async function bootstrap() {
   //   })
   // )
 
+  app.enableCors({
+    origin: true
+  })
+
   app.useGlobalPipes(
     new ValidationPipe({
       skipMissingProperties: true,

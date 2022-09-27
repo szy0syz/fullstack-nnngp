@@ -11,6 +11,7 @@
     "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
     "db:create-client": "prisma generate",
     "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev",
+    "db:studio": "env-cmd --no-override -f .local.env npx prisma studio",
     "UTILS": "---------------------------------------------------------------------------------------------------",
     "gen:gql": "graphql-code-generator --config tools/gql-codegen/gql-codegen.yml --watch"
   },

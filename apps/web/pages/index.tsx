@@ -1,6 +1,19 @@
+import { withApi } from '../api/api-provider';
+import { useGetUserQuery } from '../api/user/user.gql.gen';
 import styles from './index.module.css';
 
 export function Index() {
+  const [data] = useGetUserQuery({
+    variables: {
+      args: {
+        id: 1
+      }
+    }
+  })
+
+  console.log(data);
+
+
   /*
    * Replace the elements below with your own.
    *
@@ -412,4 +425,4 @@ export function Index() {
   );
 }
 
-export default Index;
+export default withApi(Index);
