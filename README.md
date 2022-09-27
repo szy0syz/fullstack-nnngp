@@ -57,4 +57,7 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
 
 <img width="1429" alt="image" src="https://user-images.githubusercontent.com/10555820/192577973-2aa6cafc-7155-4771-a2f2-8546e47443b9.png">
 
-> 终于解决我之前的疑问，为什么 `Prisma` 牺牲了强类型和便捷性，缺失了 `OO` 的部分，还别说真可以弥补了。
+> 稍微修改一下依赖关系就立马改变
+
+<img width="1044" alt="image" src="https://user-images.githubusercontent.com/10555820/192578662-e3bda7e0-4206-4288-9cc5-ea424739b7bd.png">
+
