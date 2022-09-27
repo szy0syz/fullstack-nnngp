@@ -63,7 +63,7 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
 
 ### 配置ESLint
 
-> 严禁到处前后端不分的调用，调错依赖直接显示。
+> 严禁到处前后端不分的调用，调错依赖直接显示。需启动VSLint插件。
 
 ```json
 {
@@ -90,3 +90,5 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
   ]
 }
 ```
+
+![image](https://user-images.githubusercontent.com/10555820/192581602-77a7e262-6ccc-49df-914a-019b09ea87a5.png)
