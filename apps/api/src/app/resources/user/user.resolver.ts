@@ -1,9 +1,9 @@
-import { FindManyUserArgs } from './../../../../../../libs/api/generated/db-types/src/index';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import {
   CreateOneUserArgs,
   FindUniqueUserArgs,
   UpdateOneUserArgs,
+  FindManyUserArgs,
   User,
 } from '@fullstack/api/generated/db-types';
 

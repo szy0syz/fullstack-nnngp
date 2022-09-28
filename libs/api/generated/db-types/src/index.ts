@@ -18,13 +18,6 @@ export enum UserScalarFieldEnum {
     password = "password"
 }
 
-export enum TransactionIsolationLevel {
-    ReadUncommitted = "ReadUncommitted",
-    ReadCommitted = "ReadCommitted",
-    RepeatableRead = "RepeatableRead",
-    Serializable = "Serializable"
-}
-
 export enum SortOrder {
     asc = "asc",
     desc = "desc"
@@ -37,7 +30,6 @@ export enum QueryMode {
 
 registerEnumType(QueryMode, { name: 'QueryMode', description: undefined })
 registerEnumType(SortOrder, { name: 'SortOrder', description: undefined })
-registerEnumType(TransactionIsolationLevel, { name: 'TransactionIsolationLevel', description: undefined })
 registerEnumType(UserScalarFieldEnum, { name: 'UserScalarFieldEnum', description: undefined })
 
 @ObjectType()
