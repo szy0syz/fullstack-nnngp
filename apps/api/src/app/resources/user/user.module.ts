@@ -5,5 +5,6 @@ import { DbService } from '@fullstack/api/data-access-db';
 
 @Module({
   providers: [UserResolver, UserService, DbService],
+  exports: [UserService]
 })
 export class UserModule {}

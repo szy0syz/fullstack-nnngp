@@ -11,7 +11,7 @@
     "db:docker": "docker-compose -f tools/docker-env/dev.docker-compose.yml up -d --no-recreate --remove-orphans",
     "db:create-client": "prisma generate",
     "db:dev-migrate": "env-cmd --no-override -f .local.env yarn prisma migrate dev",
-    "db:studio": "env-cmd --no-override -f .local.env npx prisma studio",
+    "db:studio": "env-cmd --no-override -f .local.env yarn prisma studio",
     "UTILS": "---------------------------------------------------------------------------------------------------",
     "gen:gql": "graphql-code-generator --config tools/gql-codegen/gql-codegen.yml --watch"
   },
@@ -20,6 +20,7 @@
     "schema": "libs/api/data-access-db/src/lib/schema.prisma"
   },
   "dependencies": {
+    "@fastify/cookie": "6",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.1",
@@ -27,6 +28,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-fastify": "^9.0.11",
     "@prisma/client": "^4.3.1",
+    "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "core-js": "^3.6.5",

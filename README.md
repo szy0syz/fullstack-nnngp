@@ -97,4 +97,9 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
 yarn add -D eslint eslint-plugin-unicorn eslint-plugin-prettier
 
 yarn nx affected:lint --all --fix
+
+yarn add @fastify/cookie@6
+
+nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name {name}
+nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name authentication
 ```

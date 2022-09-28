@@ -6,6 +6,7 @@ import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './resources/user/user.module';
+import { AuthenticationModule } from './resources/authentication/authentication.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UserModule } from './resources/user/user.module';
       graphiql: true,
     }),
     UserModule,
+    AuthenticationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -4,7 +4,8 @@
     "urql",
     "codegen",
     "nrwl",
-   "fastify",
-   "mercurius"
+    "fastify",
+    "mercurius",
+    "graphiql"
   ]
 }
