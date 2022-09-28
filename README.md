@@ -92,3 +92,9 @@ https://user-images.githubusercontent.com/10555820/191919544-ebdc6b55-a79c-480a-
 ```
 
 ![image](https://user-images.githubusercontent.com/10555820/192581602-77a7e262-6ccc-49df-914a-019b09ea87a5.png)
+
+```bash
+yarn add -D eslint eslint-plugin-unicorn eslint-plugin-prettier
+
+yarn nx affected:lint --all --fix
+```

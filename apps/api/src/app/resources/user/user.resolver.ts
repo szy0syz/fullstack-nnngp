@@ -13,8 +13,8 @@ export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
   @Query(() => User)
-  user(@Args() findUserArgs: FindUniqueUserArgs) {
-    return this.userService.findOne(findUserArgs);
+  user(@Args() findUserArguments: FindUniqueUserArgs) {
+    return this.userService.findOne(findUserArguments);
   }
 
   @Query(() => [User])
@@ -23,8 +23,8 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
-  createUser(@Args() userCreateArgs: CreateOneUserArgs) {
-    return this.userService.create(userCreateArgs);
+  createUser(@Args() userCreateArguments: CreateOneUserArgs) {
+    return this.userService.create(userCreateArguments);
   }
 
   @Mutation(() => User)
@@ -33,7 +33,7 @@ export class UserResolver {
   }
 
   @Mutation(() => User)
-  removeUser(@Args() removeUserArgs: FindUniqueUserArgs) {
-    return this.userService.remove(removeUserArgs);
+  removeUser(@Args() removeUserArguments: FindUniqueUserArgs) {
+    return this.userService.remove(removeUserArguments);
   }
 }

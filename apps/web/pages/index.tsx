@@ -3,9 +3,8 @@ import { useGetUserQuery } from '../api/user/user.gql.gen';
 import styles from './index.module.css';
 
 export function Index() {
-  const [data] = useGetUserQuery({ variables: { args: { id: 1 } } });
+  const [{data}] = useGetUserQuery({ variables: { args: { id: 1 } } });
   console.log(data);
-
 
   /*
    * Replace the elements below with your own.
@@ -18,7 +17,7 @@ export function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
+              <span> Hello {data?.user.name ?? 'there'}, </span>
               Welcome web 👋
             </h1>
           </div>
