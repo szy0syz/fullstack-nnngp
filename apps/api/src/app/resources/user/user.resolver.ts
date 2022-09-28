@@ -1,3 +1,4 @@
+import { FindManyUserArgs } from './../../../../../../libs/api/generated/db-types/src/index';
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
 import {
   CreateOneUserArgs,
@@ -18,8 +19,8 @@ export class UserResolver {
   }
 
   @Query(() => [User])
-  users() {
-    return this.userService.findAll();
+  users(@Args() findUsersArguments: FindManyUserArgs) {
+    return this.userService.findAll(findUsersArguments);
   }
 
   @Mutation(() => User)

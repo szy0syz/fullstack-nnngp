@@ -13,8 +13,7 @@ export class AuthenticationResolver {
   }
 
   @Mutation(() => User)
-  signUp(@Args('loginInput') loginInput: LoginInput) {
-    console.log('loginInput', loginInput)
-    return this.authenticationService.signUp(loginInput);
+  signUp(@Args('signUpInput') signUpInput: LoginInput) {
+    return this.authenticationService.signUp(signUpInput);
   }
 }

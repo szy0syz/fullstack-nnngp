@@ -6,6 +6,5 @@ import { UserModule } from '../user/user.module';
 @Module({
   imports: [UserModule],
   providers: [AuthenticationResolver, AuthenticationService],
-  exports: [AuthenticationService],
 })
 export class AuthenticationModule {}

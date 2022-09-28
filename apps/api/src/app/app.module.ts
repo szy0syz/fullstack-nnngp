@@ -3,8 +3,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { MercuriusDriver, MercuriusDriverConfig } from '@nestjs/mercurius';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { UserModule } from './resources/user/user.module';
 import { AuthenticationModule } from './resources/authentication/authentication.module';
 
@@ -18,7 +16,7 @@ import { AuthenticationModule } from './resources/authentication/authentication.
     UserModule,
     AuthenticationModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

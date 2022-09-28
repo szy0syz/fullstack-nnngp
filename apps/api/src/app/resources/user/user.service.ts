@@ -2,6 +2,7 @@ import { DbService } from '@fullstack/api/data-access-db';
 import { Injectable } from '@nestjs/common';
 import {
   CreateOneUserArgs,
+  FindManyUserArgs,
   FindUniqueUserArgs,
   UpdateOneUserArgs,
 } from '@fullstack/api/generated/db-types';
@@ -14,8 +15,8 @@ export class UserService {
     return this.database.user.findUnique(findUserArguments);
   }
 
-  findAll() {
-    return this.database.user.findMany();
+  findAll(findUsersArguments: FindManyUserArgs) {
+    return this.database.user.findMany(findUsersArguments);
   }
 
   create(userCreateArguments: CreateOneUserArgs) {
