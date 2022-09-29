@@ -20,7 +20,7 @@
     "schema": "libs/api/data-access-db/src/lib/schema.prisma"
   },
   "dependencies": {
-    "@fastify/cookie": "6",
+    "@fastify/cookie": "^8",
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^10.1.1",
