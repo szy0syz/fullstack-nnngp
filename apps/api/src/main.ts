@@ -4,7 +4,7 @@
  * This is only a minimal backend to get started.
  */
 
-import { BadRequestException, Logger, ValidationError, ValidationPipe } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
   FastifyAdapter,
@@ -48,12 +48,15 @@ async function bootstrap() {
 
   app.enableCors({
     origin: true,
+    credentials: true,
   });
+
+  app.useGlobalPipes(new ValidationPipe());
 
   // app.useGlobalPipes(
   //   new ValidationPipe({
   //     skipMissingProperties: true,
-  //     //whitelist: true,
+  //     whitelist: true,
   //     transform: true,
   //     transformOptions: { enableImplicitConversion: true },
   //   })
@@ -63,14 +66,14 @@ async function bootstrap() {
   //   new ValidationPipe({
   //     transform: true,
   //     exceptionFactory: (errors: ValidationError[]) => {
-  //       const errorsMessages = errors.map(error => {
-  //         Object.values(error.constraints)
-  //       })
-  //       return new BadRequestException(errorsMessages.toString())
+  //       const errorsMessages = errors.map((error) => {
+  //         Object.values(error.constraints);
+  //       });
+  //       return new BadRequestException(errorsMessages.toString());
   //     },
-  //     forbidUnknownValues: false
+  //     forbidUnknownValues: false,
   //   })
-  // )
+  // );
 
   await app.listen(port);
 
