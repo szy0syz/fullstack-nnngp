@@ -102,4 +102,6 @@ yarn add @fastify/cookie@6
 
 nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name {name}
 nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name authentication
+
+yarn add @nestjs/passport @nestjs/jwt 
 ```
