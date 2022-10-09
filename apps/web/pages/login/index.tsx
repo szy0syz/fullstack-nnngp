@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLoginMutation } from '../../api/auth/auth.gql.gen';
-import { withApi } from '../../api/api-provider';
+import { withApi } from '../../api/client-api';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');

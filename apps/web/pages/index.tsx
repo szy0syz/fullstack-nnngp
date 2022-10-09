@@ -1,4 +1,4 @@
-import { withApi } from '../api/api-provider';
+import { withApi } from '../api/client-api';
 import { useGetUserQuery } from '../api/user/user.gql.gen';
 import styles from './index.module.css';
 

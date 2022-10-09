@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { cacheExchange, createClient, fetchExchange, Provider } from 'urql';
 
 export const clientApi = createClient({
-  url: 'http://localhost:3333/graphql',
+  url: `http://${process.env.WEB_APP_HOST}:3333/graphql`,
   exchanges: [cacheExchange, fetchExchange],
 });
 
