@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
@@ -36,7 +35,7 @@ async function bootstrap() {
   };
 
   // @ts-ignore
-  await app.register(fastifyCookie, { secret: process.env.COOKIE_SECRET })
+  await app.register(fastifyCookie, { secret: process.env.COOKIE_SECRET });
 
   app.use(
     helmet({

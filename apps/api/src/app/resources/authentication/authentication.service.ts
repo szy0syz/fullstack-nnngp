@@ -18,8 +18,8 @@ export class AuthenticationService {
     return user;
   }
 
-  login(loginInput: LoginInput) {
-    return { id: loginInput.email, email: loginInput.email };
+  login(user: User) {
+    return user;
   }
 
   async signUp(signUpInput: LoginInput) {
