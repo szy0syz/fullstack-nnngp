@@ -7,6 +7,7 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { JwtService } from '@nestjs/jwt';
 import { GqlExecutionContext } from '@nestjs/graphql';
+import { IUserContext } from './types';
 
 const domain = process.env.WEB_APP_HOST;
 const jwtExpiresSecond = process.env.JWT_EXPIRES_SECONDS;
@@ -41,7 +42,7 @@ export class SetAuthGuard extends AuthGuard('local') {
     if (error || !user || info) throw error || new UnauthorizedException();
 
     const authContext = GqlExecutionContext.create(context);
-    const { reply } = authContext.getContext();
+    const { reply } = authContext.getContext<IUserContext>();
 
     const jwtExpiresMs = Number(jwtExpiresSecond) * 1000;
     const tokenExpires = Date.now() + jwtExpiresMs;

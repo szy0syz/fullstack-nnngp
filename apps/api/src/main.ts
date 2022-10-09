@@ -11,7 +11,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import helmet from 'helmet';
-// import fastifyCookie from '@fastify/cookie';
+import fastifyCookie from '@fastify/cookie';
 
 import { AppModule } from './app/app.module';
 
@@ -35,8 +35,8 @@ async function bootstrap() {
     },
   };
 
-  //TODO
-  // await app.register(fastifyCookie, { secret: process.env.COOKIE_SECRET })
+  // @ts-ignore
+  await app.register(fastifyCookie, { secret: process.env.COOKIE_SECRET })
 
   app.use(
     helmet({
