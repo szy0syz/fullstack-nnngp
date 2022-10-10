@@ -6,6 +6,7 @@
     "nrwl",
     "fastify",
     "mercurius",
-    "graphiql"
+    "graphiql",
+    "dedup"
   ]
 }
