@@ -28,9 +28,9 @@ export async function serverQuery<
   const serverClient = createClient({
     url: `http://${process.env.API_HOST}:3333/graphql`,
     fetchOptions: { headers: { cookie } },
-    // exchanges: [ssrCache, fetchExchange],
+    exchanges: [ssrCache, fetchExchange],
     // ? unknown
-    exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
+    // exchanges: [dedupExchange, cacheExchange, ssrCache, fetchExchange],
   });
 
   try {
