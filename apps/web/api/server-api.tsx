@@ -1,7 +1,5 @@
 import {
-  cacheExchange,
   createClient,
-  dedupExchange,
   fetchExchange,
   ssrExchange,
   TypedDocumentNode,
