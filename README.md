@@ -14,7 +14,7 @@ pnpx create-nx-workspace fullstack -preset=nest --tags "scope:api"
 pnpm i @nestjs/platform-fastify @nestjs/graphql @nestjs/mercurius graphql mercurius
 yarn add @nestjs/platform-fastify @nestjs/graphql @nestjs/mercurius graphql mercurius
 
-# 一键生成真是爽
+# 一键生成真是爽飞天
 yarn nx g @nrwl/nest:resource -p api --directory="app/resources" --type="graphql-code-first" --crud --name {name}
 ```
 
